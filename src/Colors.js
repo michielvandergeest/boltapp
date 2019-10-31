@@ -1,0 +1,15 @@
+export default {
+  gray100: 0xfff7fafc,
+  gray200: 0xffedf2f7,
+  gray300: 0xffe2e8f0,
+  gray400: 0xffcbd5e0,
+  gray500: 0xffa0aec0,
+  gray600: 0xff718096,
+  gray700: 0xff4a5568,
+  gray800: 0xff2d3748,
+  gray900: 0xff1a202c,
+  blue700: 0xff2b6cb0,
+  transparent: 0x00000000,
+  black: 0xff000000,
+  white: 0xffffffff,
+}

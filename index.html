@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script src="./dist/app.js"></script>
+
+    <script>
+
+      const style = document.createElement('style');
+      style.innerText = `
+      html, body {
+        width: 1920px;
+        height: 1080px;
+      }
+      *,body{
+        margin:0;
+        padding:0;
+      }
+
+      canvas {
+        position: absolute;
+        z-index: 2;
+      }
+
+      body {
+        background: black;
+      }`;
+      document.head.appendChild(style)
+
+      const app = new App()
+      document.body.appendChild(app.stage.getCanvas())
+
+    </script>
+  </body>
+</html>
