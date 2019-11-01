@@ -6,6 +6,7 @@ const height = 280
 
 export default function() {
   const defaults = {
+    debug: true,
     template: {
       h: height,
       x: 60,
@@ -37,9 +38,13 @@ export default function() {
 
         this.tag('List').children = this.data.items.map((item, index) => {
           return Item({
-            data: { ...item, ...{ index, action: this.data.action } },
+            template: {
+              x: index * (400 + 40),
+            },
+            data: { ...item, ...{ action: this.data.action } },
           })
         })
+        this.refocus()
       },
     },
     computed: {
@@ -76,7 +81,7 @@ export default function() {
       },
     },
     delegateFocus() {
-      return this.tag('List').children[this.data.current]
+      return this.tag('List') && this.tag('List').children[this.data.current]
     },
   }
 

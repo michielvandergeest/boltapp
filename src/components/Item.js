@@ -1,19 +1,17 @@
 import { Component } from 'Bolt'
 import Colors from '../colors'
 
-const width = 400
-const margin = 40
-
-let i = 1
+let i = 0
 export default function() {
   i++
   const defaults = {
+    debug: true,
     name: 'Item' + i,
     template: {
       transitions: {
         y: { duration: 0.2 },
       },
-      w: width,
+      w: 400,
       h: 200,
       rect: true,
       color: Colors.gray600,
@@ -32,8 +30,7 @@ export default function() {
       action: null,
     },
     events: {
-      init() {
-        this.x = this.data.index * (width + margin)
+      firstActive() {
         this.tag('Text').text = this.data.name
       },
       focus() {

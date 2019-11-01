@@ -4,6 +4,7 @@ import Carousel from '../components/Carousel'
 import Colors from '../Colors'
 
 export default Component({
+  debug: true,
   name: 'Main',
   template: {
     color: Colors.gray800,
@@ -37,6 +38,7 @@ export default Component({
           },
         })
       })
+      this.refocus()
     },
   },
   keys: {
@@ -51,6 +53,6 @@ export default Component({
     },
   },
   delegateFocus() {
-    return this.children.length && this.children[this.data.current]
+    return this.children[this.data.current]
   },
 })

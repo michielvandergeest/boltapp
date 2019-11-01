@@ -3,6 +3,7 @@ import Colors from '../Colors'
 
 export default Component({
   name: 'Splash',
+  debug: true,
   template: {
     color: Colors.transparent,
     Logo: {
@@ -24,8 +25,11 @@ export default Component({
     },
   },
   events: {
-    active() {
+    focus() {
       this.tag('Label').setSmooth('alpha', 1, { delay: 0.5, duration: 1.5 })
+    },
+    unfocus() {
+      this.tag('Label').alpha = 0.001
     },
   },
   keys: {
