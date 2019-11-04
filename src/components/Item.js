@@ -30,7 +30,7 @@ export default function() {
       action: null,
     },
     events: {
-      firstActive() {
+      mounted() {
         this.tag('Text').text = this.data.name
       },
       focus() {

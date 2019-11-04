@@ -32,7 +32,7 @@ export default function() {
       title: null,
     },
     events: {
-      firstActive() {
+      mounted() {
         this.tag('Title.Text').text = this.data.title
         this.y = 60 + this.data.index * (height + 60)
 
