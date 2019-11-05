@@ -17,6 +17,7 @@ export default function() {
       color: Colors.gray600,
       Text: {
         text: {
+          fontFace: 'Raleway',
           fontSize: 32,
         },
         mount: 0.5,

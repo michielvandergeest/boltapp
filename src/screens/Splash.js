@@ -21,6 +21,7 @@ export default Component({
       text: {
         text: 'Click OK to continue',
         fontSize: 50,
+        fontFace: 'RalewayMedium',
       },
     },
   },
