@@ -6,7 +6,8 @@ const height = 280
 
 export default function() {
   const defaults = {
-    debug: true,
+    name: 'Carousel',
+    id: 'carousel',
     template: {
       h: height,
       x: 60,
@@ -38,7 +39,7 @@ export default function() {
 
         this.tag('List').children = this.data.items.map((item, index) => {
           return Item({
-            template: {
+            patch: {
               x: index * (400 + 40),
             },
             data: { ...item, ...{ action: this.data.action } },

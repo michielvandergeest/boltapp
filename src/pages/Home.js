@@ -1,14 +1,9 @@
+import { Utils } from 'wpe-lightning-sdk'
 import { Component } from 'Bolt'
 import Carousel from '../components/Carousel'
 
-import Colors from '../Colors'
-
 export default Component({
-  debug: true,
-  name: 'Main',
-  template: {
-    color: Colors.gray800,
-  },
+  name: 'Home',
   data: {
     current: 0,
     categories: [],
@@ -18,7 +13,7 @@ export default Component({
       if (this.params.reset === true) {
         this.data.current = 0
         this.data.categories = []
-        fetch('./assets/categories.json')
+        fetch(Utils.asset('categories.json'))
           .then(response => response.json())
           .then(categories => (this.data.categories = categories))
       }

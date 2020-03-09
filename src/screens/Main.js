@@ -7,6 +7,7 @@ import Colors from '../Colors'
 export default Component({
   name: 'Main',
   template: {
+    rect: true,
     color: Colors.gray800,
   },
   data: {

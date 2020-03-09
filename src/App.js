@@ -1,22 +1,16 @@
-import { Application } from 'Bolt'
-import Colors from './Colors'
+import { Utils } from 'wpe-lightning-sdk'
+import { Component } from 'Bolt'
 
-import Splash from './screens/Splash'
 import Main from './screens/Main'
+import Splash from './screens/Splash'
 
-const App = Application({
-  name: 'App',
-  debug: true,
-  fonts: [
-    { family: 'Raleway', url: './assets/fonts/Raleway-Regular.ttf' },
-    { family: 'RalewayMedium', url: './assets/fonts/Raleway-Medium.ttf' },
-    { family: 'RalewayBold', url: './assets/fonts/Raleway-Bold.ttf' },
-  ],
-  // images to preload _before_ the App is mounted
-  // (beware: only preload what is really necessary!)
-  preload: ['./assets/logo.png', './assets/bg.png'],
-  template: {
-    color: Colors.gray400,
+export default Component({
+  fonts() {
+    return [
+      { family: 'Raleway', url: Utils.asset('fonts/Raleway-Regular.ttf') },
+      { family: 'RalewayMedium', url: Utils.asset('fonts/Raleway-Medium.ttf') },
+      { family: 'RalewayBold', url: Utils.asset('fonts/Raleway-Bold.ttf') },
+    ]
   },
   routes: {
     Main,
@@ -28,5 +22,3 @@ const App = Application({
     },
   },
 })
-
-export default App

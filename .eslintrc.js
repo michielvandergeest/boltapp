@@ -11,23 +11,20 @@ module.exports = {
     'prettier',
   ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     quotes: [2, 'single', 'avoid-escape'],
     semi: [2, 'never'],
-    // 'comma-dangle': ['error', 'always-multiline'],
     'no-extra-boolean-cast': 'off',
-    "no-unused-vars": [
+    'no-unused-vars': [
       1,
       {
-        "ignoreSiblings": true,
-        "argsIgnorePattern": "res|next|^err"
+        'ignoreSiblings': true,
+        'argsIgnorePattern': 'res|next|^err'
       }
     ],
     'prettier/prettier': [
       'error',
       {
-        trailingComma: 'es5',
+        trailingComma: true,
         singleQuote: true,
         tabWidth: 2,
         semi: false,
@@ -38,6 +35,6 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint',
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
 }

@@ -1,29 +1,34 @@
+import { Utils } from 'wpe-lightning-sdk'
 import { Component } from 'Bolt'
 import Colors from '../Colors'
 
 export default Component({
   name: 'Splash',
-  debug: true,
-  template: {
-    color: Colors.transparent,
-    Logo: {
-      mount: 0.5,
-      x: w => w / 2,
-      y: y => y / 3,
-      src: './assets/logo.png',
-    },
-    Label: {
-      color: Colors.gray800,
-      mount: 0.5,
-      x: w => w / 2,
-      y: y => y / 2,
-      alpha: 0.001,
-      text: {
-        text: 'Click OK to continue',
-        fontSize: 50,
-        fontFace: 'RalewayMedium',
+  template() {
+    return {
+      color: Colors.gray200,
+      rect: true,
+      w: w => w,
+      h: h => h,
+      Logo: {
+        mount: 0.5,
+        x: w => w / 2,
+        y: y => y / 3,
+        src: Utils.asset('logo.png'),
       },
-    },
+      Label: {
+        color: Colors.gray800,
+        mount: 0.5,
+        x: w => w / 2,
+        y: y => y / 2,
+        alpha: 0.001,
+        text: {
+          text: 'Click OK to continue',
+          fontSize: 50,
+          fontFace: 'RalewayMedium',
+        },
+      },
+    }
   },
   events: {
     focus() {
